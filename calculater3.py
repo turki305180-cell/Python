@@ -17,11 +17,11 @@ while True:
     elif ope in ["subtraction","-"]:
         sol = Num - num
         print(sol)
-    elif ope in ["diviston","divide","/"] and 0 not in [num]:
+    elif ope in ["division","divide","/"] and num !=0:
         sol = Num / num
         print(sol)
-        print("ERROR: can divide 0")
-    elif ope not in ["plus","+","subtraction","-","diviton","divide","/","x",'*']:
+    elif ope not in ["plus","+","subtraction","-","division","divide","/","x",'*']:
         print("ERROR: please correct your input")
     else:
-        print("ERORR: can't divide 0 by",Num) 
+        print("ERROR: can't divide by 0",Num)
+        
