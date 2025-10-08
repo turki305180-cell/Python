@@ -1,24 +1,27 @@
 while True:
-    ope = input("enter a Mathematical operator: ")
+    ope = input("enter a Mathematical operator: ").lower()
     Numb = input("Enter a Number: ")
     numb = input("Enter another number: ")
     try:
         Num = float(Numb)
         num = float(numb)
     except:
-        print("ERORR: please correct your input")
+        print("ERROR: please correct your input")
         continue
-    if ope in ["x",'X','*']:
+    if ope in ["x",'*']:
         sol = Num * num
         print(sol)
-    elif ope in ["plus","Plus","+","PLUS"]:
+    elif ope in ["plus","+",]:
         sol = Num + num
         print(sol)
-    elif ope in ["subtraction","Subtraction","SUBTRACTION","-"]:
+    elif ope in ["subtraction","-"]:
         sol = Num - num
         print(sol)
-    elif ope in ["diviton","divide","/"]:
+    elif ope in ["diviston","divide","/"] and 0 not in [num]:
         sol = Num / num
         print(sol)
-    elif ope not in ["plus","Plus","+","PLUS","subtraction","Subtraction","SUBTRACTION","-","diviton","divide","/","x",'X','*']:
-        print("ERORR: please correct your input")
+        print("ERROR: can divide 0")
+    elif ope not in ["plus","+","subtraction","-","diviton","divide","/","x",'*']:
+        print("ERROR: please correct your input")
+    else:
+        print("ERORR: can't divide 0 by",Num) 
