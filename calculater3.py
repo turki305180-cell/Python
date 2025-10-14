@@ -1,27 +1,25 @@
 while True:
-    ope = input("enter a Mathematical operator: ").lower()
-    Numb = input("Enter a Number: ")
-    numb = input("Enter another number: ")
     try:
-        Num = float(Numb)
-        num = float(numb)
-    except:
-        print("ERROR: please correct your input")
+         operator = input("Enter a mathematical operator: ").lower().strip()
+         num1 = float(input("Enter a Number: ").strip())
+         num2 = float(input("Enter another Number: ").strip())
+    except ValueError:
+        print("Error!: please correct your input")
         continue
-    if ope in ["x",'*']:
-        sol = Num * num
+    if operator in ["x","*","multiplication"]:
+        sol = num1 * num2
         print(sol)
-    elif ope in ["plus","+",]:
-        sol = Num + num
+    elif operator in ["addition","plus","+"]:
+        sol = num1 + num2
         print(sol)
-    elif ope in ["subtraction","-"]:
-        sol = Num - num
-        print(sol)
-    elif ope in ["division","divide","/"] and num !=0:
-        sol = Num / num
-        print(sol)
-    elif ope not in ["plus","+","subtraction","-","division","divide","/","x",'*']:
-        print("ERROR: please correct your input")
+    elif operator in ["/","division","divide"]:
+        if 0 == num2:
+            print("Error!: can't divide by 0")
+        else:
+            sol = num1 / num2
+            print(sol)    
+    elif operator in ["-","subtraction","minus"]:
+         sol = num1 - num2
+         print(sol)
     else:
-        print("ERROR: can't divide by 0",Num)
-        
+        print("Error!: Enter a vaild operator")
